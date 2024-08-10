@@ -1,0 +1,14 @@
+---
+import ThumbnailImage from "@/components/astro/ThumbnailImage.astro";
+import Layout from "@/layout/index.layout.astro";
+---
+
+<Layout title="Test" classList="grid place-items-center">
+  <ThumbnailImage
+    defaultSrc="http://localhost:3001/shrek.jpg"
+    alt=""
+    thumbnail
+    height={520}
+    width={820}
+  />
+</Layout>

@@ -19,7 +19,7 @@ const { title, darkMode, classList } = Astro.props;
     <link rel="icon" href="/favicons/96px.png" type="image/png" sizes="96x96" />
     <title>{title}</title>
   </head>
-  <body class:list={[" min-h-screen dark:bg-zinc-700 py-4"]}>
+  <body class:list={[" min-h-screen dark:bg-zinc-700 py-4", classList]}>
     <slot />
   </body>
 </html>
