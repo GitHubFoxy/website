@@ -1,0 +1,25 @@
+---
+type Props = {
+  darkMode?: boolean;
+  classList?: string;
+  title: string;
+};
+
+const { title, darkMode, classList } = Astro.props;
+---
+
+<html lang="ru" class={darkMode ? "dark" : ""}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content="Misha Tretyakov personal website" />
+    <link rel="icon" href="/favicons/16px.png" type="image/png" sizes="16x16" />
+    <link rel="icon" href="/favicons/32px.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="/favicons/96px.png" type="image/png" sizes="96x96" />
+    <title>{title}</title>
+  </head>
+  <body class:list={[" min-h-screen dark:bg-zinc-700 py-4"]}>
+    <slot />
+  </body>
+</html>

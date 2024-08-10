@@ -1,0 +1,31 @@
+---
+import { Image } from "astro:assets";
+type Props = {
+  src: string;
+  width: number;
+  height: number;
+};
+const { src, width, height } = Astro.props;
+---
+
+<!-- TODO: LOADING FINISH OPACITY FADE OUT ANIMATION -->
+<div class:list={["relative", `w-[${width}px] `, `h-[${height}px]`]}>
+  <Image
+    src={`http://localhost:3001/${src}?thumbnail=true`}
+    class:list={["absolute z-[1] object-cover h-full w-full rounded"]}
+    fetchpriority="high"
+    decoding="async"
+    loading="eager"
+    alt={"profileimage"}
+    width={10}
+    height={10}
+  />
+  <Image
+    loading="lazy"
+    src={`http://localhost:3001/${src}?w=${width}`}
+    class:list={["absolute z-[2] object-cover h-full w-full rounded"]}
+    alt={""}
+    width={width}
+    height={height}
+  />
+</div>

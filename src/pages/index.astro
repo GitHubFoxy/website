@@ -1,16 +1,15 @@
 ---
-
+import Layout from "@/layout/index.layout.astro";
+import Header from "@/components/astro/Header.astro";
+import Container from "@/components/astro/Container.astro";
+import SharpImage from "@/components/astro/SharpImage.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="website" darkMode={true}>
+  <Container>
+    <div class:list={["grid gap-2"]}>
+      <Header />
+      <SharpImage src="shrek.jpg" width={960} height={480} />
+    </div>
+  </Container>
+</Layout>
